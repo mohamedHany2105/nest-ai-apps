@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AiModule } from './ai/ai.module';
-import { SkdController } from './skd/skd.controller';
 import { SdkService } from './sdk/sdk.service';
 import { SdkController } from './sdk/sdk.controller';
 import { SdkModule } from './sdk/sdk.module';
@@ -14,9 +13,9 @@ import { ApiModule } from './api/api.module';
     }),
     AiModule,
     SdkModule,
-    ApiModule,
+    // ApiModule,
   ],
-  controllers: [SkdController, SdkController],
+  controllers: [SdkController, SdkController],
   providers: [SdkService],
 })
 export class AppModule {}
