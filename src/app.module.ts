@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AiModule } from './ai/ai.module';
-import { SdkService } from './sdk/sdk.service';
-import { SdkController } from './sdk/sdk.controller';
-import { SdkModule } from './sdk/sdk.module';
-import { ApiModule } from './api/api.module';
+// import { SdkService } from './sdk/sdk.service';
+// import { SdkController } from './sdk/sdk.controller';
+// import { SdkModule } from './sdk/sdk.module';
+// import { ApiModule } from './api/api.module';
 import { PromptModule } from './prompt/prompt.module';
 import { AiGeneration } from './prompt/entities/prompt.entity';
 import { AiService } from './ai/ai.service';
@@ -28,11 +28,11 @@ import { AiService } from './ai/ai.service';
       logging: true,
     }),
     AiModule,
-    SdkModule,
-    ApiModule,
+    // SdkModule,
+    // ApiModule,
     PromptModule,
   ],
-  controllers: [SdkController],
-  providers: [SdkService,AiService],
+  controllers: [],
+  providers: [AiService],
 })
 export class AppModule {}

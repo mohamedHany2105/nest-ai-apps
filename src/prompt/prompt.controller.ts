@@ -10,5 +10,17 @@ export class PromptController {
   create(@Body() dto: CreatePromptDto) {
     return this.promptService.createPrompt(dto);
   }
+  @Post('1')
+  featureOne() {
+    return this.promptService.featureone();
+  } 
+  @Post('2')
+  featureTwo() {
+    return this.promptService.featureTwo();
+  }
+  @Post('3')
+  featureThree() {
+    return this.promptService.featureThree();
+  } 
 }
 

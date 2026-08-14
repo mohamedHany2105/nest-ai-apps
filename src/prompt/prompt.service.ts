@@ -5,6 +5,7 @@ import { AiService } from '../ai/ai.service';
 import { CreatePromptDto } from './dto/create-prompt.dto';
 import { AiGeneration } from './entities/prompt.entity';
 import { AiGenerationStatus } from './enums';
+import { prompts } from './prompt/prompt.prompt';
 
 @Injectable()
 export class PromptService {
@@ -39,5 +40,24 @@ export class PromptService {
     });
 
     return this.promptRepo.save(record);
+  }
+  async featureone() {
+    // it should get data by progress record and run automatically at the begin of each month
+    const generatedText = await this.aiService.chat(prompts.tier1); 
+    
+    return generatedText;
+  }
+    async featureTwo() {
+    // prompt = "translate to arabic | translate to english"
+    const generatedText = await this.aiService.chat(prompts.tier2); 
+    return generatedText;
+  }
+    async featureThree() {
+   // input = text
+   // output = more details about this text
+   // cleanded comments 
+  // suggested tagweed
+    const generatedText = await this.aiService.chat(prompts.tier3); 
+    return generatedText;
   }
 }
